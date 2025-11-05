@@ -127,5 +127,5 @@ Para dúvidas ou suporte, entre em contato através do formulário de contato do
 Todos os direitos reservados © 2025 Unpliq Finanças
 \`\`\`
 
-```typescriptreact file="components/ad-banner.tsx" isDeleted="true"
+\`\`\`typescriptreact file="components/ad-banner.tsx" isDeleted="true"
 ...deleted...
