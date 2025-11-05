@@ -2,13 +2,20 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Clock, Calendar, Tag, ArrowLeft } from "lucide-react"
-import { getArticleBySlug, getRelatedArticles } from "@/lib/articles"
+import { getArticleBySlug, getRelatedArticles, getAllArticles } from "@/lib/articles"
 import type { Metadata } from "next"
 
 interface ArticlePageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+export async function generateStaticParams() {
+  const articles = getAllArticles()
+  return articles.map((article) => ({
+    slug: article.slug,
+  }))
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
